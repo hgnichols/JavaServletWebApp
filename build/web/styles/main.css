@@ -1,0 +1,102 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 16, 2018, 4:30:52 PM
+    Author     : Dkmar
+*/
+
+#bold p{
+    line-height: 50%;
+    font-weight: bold;
+}
+h1{
+    color: teal;
+    font-size: x-large;
+}
+#submit{
+    font-size: 14px;
+    
+}
+#submit:hover{
+    font-size: 18px; 
+}
+input {
+    display: inline-block;   
+}
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+th, td {
+    padding: 8px;
+}
+.leftAlign {
+    text-align: left;
+}
+.rightAlign {
+    text-align: right;
+}
+
+#addProductButton {
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.codeColumn {
+    width: 60px;
+}
+.descriptionColumn {
+    width: 450px;
+}
+.priceColumn {
+    width: 75px;
+}
+.editColumn {
+    width: 40px;
+}
+.deleteColumn {
+    width: 60px;
+}
+.productForm {
+    font-weight: bold;
+}
+.productFormLabel {
+    padding-right: 70px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.productFormInput{
+    margin: 5px;
+}
+.container {
+  width: 500px;
+  clear: both;
+}
+.container input {
+  width: 90px;
+  clear: both;
+}
+
+.container textarea {
+  width: 200px;
+  clear: both;
+  margin-left: -38px;
+}
+.productFormLabelPrice {
+    margin-left: 1px;
+}
+.productFormLabelDescription {
+    float: left;
+}
+#productFormTextArea {
+    margin-left: 1px;
+}
+.productButtons {
+    margin: 2px;
+}
+#productUpdateButton {
+    margin-left: 115px;
+}
+
