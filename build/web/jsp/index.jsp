@@ -8,6 +8,6 @@
     </head>
     <body>
         <h1>Product Management</h1>
-        <a href="">View Products</a>
+        <a href="products.jsp">View Products</a>
     </body>
 </html>
