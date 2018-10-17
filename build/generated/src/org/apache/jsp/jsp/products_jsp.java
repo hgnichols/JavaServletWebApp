@@ -51,7 +51,7 @@ public final class products_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <p>User\n");
-      out.write("            <a href=\"\">Logout</a>\n");
+      out.write("            <a href=\"index.jsp\">Logout</a>\n");
       out.write("        </p>\n");
       out.write("        <h1>Products</h1>\n");
       out.write("        <table>\n");

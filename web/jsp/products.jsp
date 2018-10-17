@@ -8,7 +8,7 @@
     </head>
     <body>
         <p>User
-            <a href="">Logout</a>
+            <a href="login.jsp">Logout</a>
         </p>
         <h1>Products</h1>
         <table>
