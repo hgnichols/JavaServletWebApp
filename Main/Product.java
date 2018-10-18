@@ -8,6 +8,9 @@
  *
  * @author Dkmar
  */
+
+package Main;
+
 import java.io.Serializable;
 import java.text.NumberFormat;
 
