@@ -7,11 +7,14 @@ package Main;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -85,6 +88,54 @@ public class MembershipServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+         String message; 
+      
+     String firstName = request.getParameter("firstName");
+     String lastName = request.getParameter("lastName");
+     String email = request.getParameter("email");
+     String password = request.getParameter("password");
+     
+     if ( firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || password.isEmpty()) {
+                
+                message = "Please fill out all of the fields<br>";
+                message += "You are missing: ";
+                if( firstName.isEmpty()){
+                    message += "first name, ";
+                }
+                
+                if(lastName.isEmpty()){
+                    message += "last name, ";
+                }
+                
+                if(email.isEmpty()){
+                    message += "email, ";
+                }
+                
+                if(password.isEmpty()){
+                    message += "password, ";
+                }
+                
+                
+        } else {
+             
+            // the user entered their info correctly in the JSP part
+            
+            User newUser = new User();
+                newUser.setFirstName(firstName);
+                newUser.setLastName(lastName);
+                newUser.setEmail(email);
+                newUser.setPassword(password);
+                
+            
+           HttpSession session = request.getSession();
+           session.setAttribute("UserData", newUser);
+           
+        // create users list and store it in the session.
+        ArrayList<User> users = new ArrayList<>();
+        session.setAttribute("newUser", users);
+     }
+     
     }
 
     /**

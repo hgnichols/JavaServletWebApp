@@ -20,7 +20,7 @@
          <p> Last Name: <input type ="text" </p>
          <p> Email: <input type ="email" required size = "30" </p>
          <p> Username: <input type ="text" required size = "25" </p>
-         <p> Password: <input type ="password" required size = "25" </p>
+         <p> Password: <input type ="password" minlength="8" required size = "25" </p>
         </form>
         </div>
         <input type ="submit" name ="signup" value = "Sign up" form = "form1" id = "submit">
