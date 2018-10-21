@@ -32,19 +32,7 @@ public class ProductManagementServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ProductManagementServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ProductManagementServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
+         }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -59,6 +47,39 @@ public class ProductManagementServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        String action = request.getParameter("action");
+        String url = "/index.jsp";
+        
+        if(action!= null && !action.isEmpty()){
+        if (action.equals("displayProducts")) {
+            getServletContext().getRequestDispatcher("/jsp/products.jsp").forward(request, response); 
+        }
+        else if (action.equals("addProduct")){
+            getServletContext().getRequestDispatcher("/jsp/product.jsp").forward(request,response);
+        }
+        else if (action.equals("displayProduct")){
+            getServletContext().getRequestDispatcher("/jsp/product.jsp").forward(request,response);
+        }
+        else if (action.equals("deleteProduct")){
+            getServletContext().getRequestDispatcher("/jsp/confirmDelete.jsp").forward(request,response);
+        }
+        }
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Project Management Servlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Action is " + action + "</h1>");
+            out.println("<h2> Error! The action parameter is required. It must equal displayProducts, addProduct,"
+                    + "displayProduct, or deleteProduct");
+            out.println("</body>");
+            out.println("</html>");
+        }
+        
     }
 
     /**
