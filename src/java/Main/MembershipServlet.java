@@ -133,7 +133,9 @@ public class MembershipServlet extends HttpServlet {
            
         // create users list and store it in the session.
         ArrayList<User> users = new ArrayList<>();
+        users.add(newUser);
         session.setAttribute("newUser", users);
+        
      }
      
     }

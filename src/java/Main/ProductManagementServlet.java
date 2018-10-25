@@ -94,6 +94,11 @@ public class ProductManagementServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        String code = request.getParameter("code");
+        String description = request.getParameter("description");
+        
+        
     }
 
     /**
