@@ -7,11 +7,13 @@ package Main;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -95,9 +97,57 @@ public class ProductManagementServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
+        String message;
         String code = request.getParameter("code");
         String description = request.getParameter("description");
+        double price = Double.parseDouble(request.getParameter("price"));
         
+        // Validate double input
+        
+        try{
+        price = Double.parseDouble(request.getParameter("price"));
+         }catch (NumberFormatException ex) {
+         System.out.println("Exception caught, incorrect double input");
+         throw ex;
+}
+        
+        if (code.isEmpty() || description.isEmpty() || price < 0){
+                
+                message = "Please fill out all of the fields<br>";
+                message += "You are missing: ";
+                if( code.isEmpty()){
+                    message += "code, ";
+                }
+                
+                if(description.isEmpty()){
+                    message += "description, ";
+                }
+                
+                if(price < 0){
+                    message += "price, ";
+                }
+               
+                
+                
+        } else {
+             
+            // the user entered their info correctly in the JSP part
+            
+            Product newProduct = new Product();
+                newProduct.setCode(code);
+                newProduct.setDescription(description);
+                newProduct.setPrice(price);
+                
+            
+           HttpSession session = request.getSession();
+           session.setAttribute("ProductData", newProduct);
+           
+        // create product list and store it in the session.
+        ArrayList<Product> products = new ArrayList<>();
+        products.add(newProduct);
+        session.setAttribute("newProduct", products);
+        
+     }
         
     }
 
