@@ -146,6 +146,7 @@ public class ProductManagementServlet extends HttpServlet {
         ArrayList<Product> products = new ArrayList<>();
         products.add(newProduct);
         session.setAttribute("newProduct", products);
+        getServletContext().getRequestDispatcher("/jsp/product.jsp").forward(request,response);
         
      }
         

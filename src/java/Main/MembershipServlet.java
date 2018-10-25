@@ -135,6 +135,7 @@ public class MembershipServlet extends HttpServlet {
         ArrayList<User> users = new ArrayList<>();
         users.add(newUser);
         session.setAttribute("newUser", users);
+        getServletContext().getRequestDispatcher("/jsp/products.jsp").forward(request,response);
         
      }
      
