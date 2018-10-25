@@ -13,7 +13,7 @@
         <title>Product Management</title>
     </head>
     <body>
-        <p> User <a href = "index.jsp" > Logout </a></p>
+        <p> ${UserData.firstName} <a href = "index.jsp" > Logout </a></p>
         <h1>Are you sure you want to delete this product?</h1>
         <form id ="form1">
         <div id="bold">    

@@ -7,7 +7,7 @@
         <title>Product Management</title>
     </head>
     <body>
-        <p>User
+        <p>${UserData.firstName}
             <a href="">Logout</a>
         </p>
         <h1>Product</h1>
