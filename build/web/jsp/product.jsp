@@ -12,10 +12,10 @@
         </p>
         <h1>Product</h1>
         <div class="container">
-        <form class="productForm">
+        <form class="productForm" method="post" action="productManagement?action=addProduct">
             <label class="productFormLabel">Code:</label> <input  id="productFormTextArea" class="productFormInput" type="text" name="code"><br>
-            <label class="productFormLabel productFormLabelDescription">Description:</label> <textarea class="productFormInput" rows="2" cols="20"></textarea><br>
-            <label class="productFormLabel">Price:</label> <input class="productFormInput productFormLabelPrice" type="text" name="code"><br>
+            <label class="productFormLabel productFormLabelDescription">Description:</label> <textarea class="productFormInput" rows="2" cols="20" name = "description"></textarea><br>
+            <label class="productFormLabel">Price:</label> <input class="productFormInput productFormLabelPrice" type="text" name="price"><br>
         </form>
         </div>
         <button id="productUpdateButton" class="productButtons" type="button">Update Product</button><button class="productButtons" type="button">View Products</button>

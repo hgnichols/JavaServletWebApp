@@ -14,13 +14,13 @@
     </head>
     <body>
         <h1>Sign-up form</h1>
-        <form id="form1">
+        <form id="form1" method="post" action="membership?action=signup">
          <div id="bold">  
-         <p> First Name: <input type ="text" </p>
-         <p> Last Name: <input type ="text" </p>
-         <p> Email: <input type ="email" required size = "30" </p>
+         <p> First Name: <input type ="text" name  ="firstName" </p>
+         <p> Last Name: <input type ="text" name ="lastName" </p>
+         <p> Email: <input type ="email" name ="email" required size = "30" </p>
          <p> Username: <input type ="text" required size = "25" </p>
-         <p> Password: <input type ="password" minlength="8" required size = "25" </p>
+         <p> Password: <input type ="password" name ="password" minlength="8" required size = "25" </p>
         </form>
         </div>
         <input type ="submit" name ="signup" value = "Sign up" form = "form1" id = "submit">
